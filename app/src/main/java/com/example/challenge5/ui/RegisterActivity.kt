@@ -106,10 +106,5 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun emptyInputEditText() {
-        binding.textInputEditTextName!!.text = null
-        binding.textInputEditTextEmail!!.text = null
-        binding.textInputEditTextPassword!!.text = null
-        binding.textInputEditTextConfirmPassword!!.text = null
-    }
+
 }

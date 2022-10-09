@@ -1,11 +1,14 @@
 package com.example.challenge5.ui
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.challenge5.R
 import com.example.challenge5.preference.PrefManager
 import com.example.challenge5.databinding.ActivityHomeBinding
+import kotlin.math.log
 
 class HomeActivity : AppCompatActivity() {
     private var _binding : ActivityHomeBinding? = null
@@ -20,6 +23,7 @@ class HomeActivity : AppCompatActivity() {
         prefManager = PrefManager(this)
         email = prefManager.getEmail().toString()
         checkLogin()
+        setupUI()
 
         binding.btnLogout.setOnClickListener {
             prefManager.removeData()
@@ -29,6 +33,11 @@ class HomeActivity : AppCompatActivity() {
         }
 
         showFragment()
+    }
+
+    private fun setupUI() {
+        binding.tvData.text = "Welcome $email"
+        Log.d(TAG, "setupUI: $email")
     }
 
     private fun showFragment() {
