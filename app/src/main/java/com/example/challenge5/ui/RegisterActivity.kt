@@ -1,5 +1,6 @@
 package com.example.challenge5.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -94,7 +95,8 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 getString(R.string.success_message),
                 Snackbar.LENGTH_LONG
             ).show()
-            emptyInputEditText()
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         } else {
             Snackbar.make(
                 binding.constraintLayout!!,

@@ -3,6 +3,7 @@ package com.example.challenge5.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.challenge5.R
 import com.example.challenge5.preference.PrefManager
 import com.example.challenge5.databinding.ActivityHomeBinding
 
@@ -26,7 +27,18 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        showFragment()
     }
+
+    private fun showFragment() {
+        val mFragmentManager = supportFragmentManager
+        val mFragmentTransaction = mFragmentManager.beginTransaction()
+        val mFragment = DataFragment()
+
+        mFragmentTransaction.add(R.id.flData,mFragment).commit()
+    }
+
     private fun checkLogin() {
         if (prefManager.isLogin() == false){
             val intent = Intent(this, LoginActivity::class.java)

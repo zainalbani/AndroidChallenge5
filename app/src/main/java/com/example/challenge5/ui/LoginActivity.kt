@@ -40,7 +40,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         when (v.id) {
             R.id.btnLogin -> verifyFromSQLite()
             R.id.textViewLinkRegister -> {
-                // Navigate to RegisterActivity
                 val intentRegister = Intent(applicationContext, RegisterActivity::class.java)
                 startActivity(intentRegister)
             }
@@ -85,5 +84,4 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             finish()
         }
     }
-
 }
