@@ -23,6 +23,7 @@ class PrefManager(context: Context) {
         editor?.putString("email",email)
         editor?.commit()
     }
+
     fun isLogin(): Boolean?{
         return pref?.getBoolean(IS_LOGIN, false)
     }

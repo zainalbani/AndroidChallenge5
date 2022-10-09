@@ -63,9 +63,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
         if (databaseHelper!!.checkUser(binding.textInputEditTextEmail!!.text.toString().trim { it <= ' ' }, binding.textInputEditTextPassword!!.text.toString().trim { it <= ' ' })) {
             prefManager.setLogin(true)
-            prefManager.setEmail(binding.textInputEditTextEmail.toString().trim())
+            prefManager.setEmail(binding.textInputEditTextEmail.text.toString())
             val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("EMAIL", binding.textInputEditTextEmail!!.text.toString().trim { it <= ' ' })
+            intent.putExtra("email", binding.textInputEditTextEmail!!.text.toString().trim { it <= ' ' })
             emptyInputEditText()
             startActivity(intent)
         } else {

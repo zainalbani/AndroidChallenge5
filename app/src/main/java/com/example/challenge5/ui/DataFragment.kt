@@ -45,7 +45,7 @@ class DataFragment : Fragment() {
                     val responseCode = response.code()
 
                     response.body()?.let { list.addAll(it.data) }
-                    val adapter = MovieAdapter(list)
+                    val adapter = MovieAdapter(list,requireContext())
                     binding.rvData.adapter = adapter
                 }
 
